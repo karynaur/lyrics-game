@@ -26,7 +26,7 @@ class DropOutput(Callback):
 
 artists=['kanye','beiber','ariana','drake','miley','21pilots','adele','21savage','backstreet','coldplay','edsheeran','eminem','linkinpark','weeknd','taylor']
 
-def generate(prompt,model)
+def generate(prompt,model):
   learn=load_learner('models/{}.pkl'.format(model))
   prompt_ids = tokenizer.encode(prompt)
   inp = tensor(prompt_ids)[None]#.cuda()
@@ -36,4 +36,9 @@ def generate(prompt,model)
                              min_length=5,
                              top_k=40,
                              num_return_sequences=1)
-   return tokenizer.decode(preds[0].cpu().tolist())
+  return tokenizer.decode(preds[0].cpu().tolist()).replace("\"\"","").replace("\n\n","\n")
+
+for i in artists:
+   print(i)
+   print(generate("Test ",i).replace("\"\"",""))
+   print()
