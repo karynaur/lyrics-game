@@ -22,16 +22,51 @@ if st.button("new game"):
     state.game_over = False
 
 
+select=st.sidebar.selectbox('Artist',('Justin Bieber','Adele','Drake','The Weeknd','Ariana Grande','Ed Sheeran','Coldplay','Miley Cyrus','Backstreet Boys','Eminem','21 Savage','Linkin Park','21 Pilots','Kanye West','Taylor Swift'))
+
 with open('lyrics.json','rb') as f:
    data=json.load(f)
 
-a=random.randint(1,96)
+if select=='Justin Bieber':
+   x=0;y=8
+elif select=='Adele':
+   x=9;y=15
+elif select=='Drake':
+   x=16;y=21
+elif select=='The Weeknd':
+   x=22;y=27
+elif select=='Taylor Swift':
+   x=28;y=33
+elif select=='Ariana Grande':
+   x=34;y=36
+elif select=='Ed Sheeran':
+   x=37;y=43
+elif select=='Coldplay':
+   x=44;y=50
+elif select=='Miley Cyrus':
+   x=51;y=57
+elif select=='Backstreet Boys':
+   x=58;y=64
+elif select=='Eminem':
+   x=65;y=71
+elif select=='Kanye West':
+   x=72;y=78
+elif select=='21 Savage':
+   x=79;y=81
+elif select=='Linkin Park':
+   x=82;y=88
+else:x=89;y=95
+
+
+
+a=random.randint(x,y)
 b=random.randint(2,3)
 c=random.randint(1,len(data[a][b])-1)
 
 
 col1.header("Lyrics:")
 col1.text(data[a][b][c])
+
 col1.subheader('by: '+data[a][0])
 col2.header("Your choice:")
 
