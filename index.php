@@ -1,1 +1,1 @@
-<?php include_once("chess.html"); ?>
+<?php include_once("home.html"); ?>
