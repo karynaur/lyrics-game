@@ -1,0 +1,97 @@
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    
+}
+  
+  /* The navigation menu links */
+  .sidenav select  {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: aliceblue;
+    display: block;
+    background-color: #111;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+  }
+
+
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav div {
+    text-align: center;
+    align-items: center;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 250px; /* Same as the width of the sidebar */
+    padding: 10px 10px;
+    font-family: 'Lato', sans-serif;
+    
+  }
+
+.flex-container {
+    display: flex;
+}
+
+
+
+.flex-child {
+    flex: 1;
+    border: 2px solid rgb(0, 0, 0);
+    margin-right: 10px;
+    padding: 10px;
+}  
+
+div.flex-child:nth-of-type(1){ 
+    flex: 3; 
+    
+      
+} 
+div.flex-child:nth-of-type(2){ 
+    flex: 1; 
+    
+      
+} 
+div.flex-child:nth-of-type(3){ 
+    flex: 1; 
+   
+      
+} 
+#button {
+    
+    background-color:#111;
+    border-radius: 5px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 16px;
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    transition-duration: 0.4s;
+}
+
+#button:hover {
+  background-color: aliceblue; 
+  color: rgb(0, 0, 0);
+}
+
+#lyrics{
+  white-space: pre-line;
+  font-size: 20;
+}
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
