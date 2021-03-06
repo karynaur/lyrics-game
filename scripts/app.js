@@ -49,9 +49,15 @@ function changeLyrics(){
     var b=Math.floor(Math.random()*2)+2
     var c=Math.floor(Math.random()*(lyrics[a][b].length-1))+1;
     
-
-    document.getElementById("lyrics").innerHTML=lyrics[a][b][c];
-    document.getElementById("lyrics").innerHTML+="<br><br><b>By: "+lyrics[a][0] +"<br>From: "+ lyrics[a][1]+"</b>";
+    try {
+        document.getElementById("lyrics").innerHTML=lyrics[a][b][c];
+        document.getElementById("lyrics").innerHTML+="<br><br><b>By: "+lyrics[a][0] +"<br>From: "+ lyrics[a][1]+"</b>";
+            
+    } catch (e) {
+    
+        newGame();
+    }
+    
 
     if(b==2){
         globalThis.ground=true  

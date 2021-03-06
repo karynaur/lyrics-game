@@ -9,12 +9,12 @@
     
     
 </head>
-<body style="background-color:#c9aa88 ;">
+<body style="background-color:#36454F ;">
 
     <script>
         
         $(document).ready(function(){
-            $.getJSON("lyrics.json", function(data){
+            $.getJSON("get_file.php?f=lyrics", function(data){
                lyrics=data; 
                 
             }).fail(function(){
