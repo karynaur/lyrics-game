@@ -3,6 +3,7 @@
 function newGame(){
     
     document.getElementById("score").innerHTML=0;
+    document.getElementById("alert").innerHTML="";
     changeLyrics();
 }
 
@@ -10,7 +11,7 @@ function changeLyrics(){
     var select=document.getElementById("artists").value;
 
     if(select=="Choose"){
-        alert("Choose your Artist");
+       document.getElementById("alert").innerHTML="Choose your artist!" 
     }
     else if(select=="All Artists"){
         x=0;y=95;
@@ -104,4 +105,34 @@ function scoreFake(){
     changeLyrics();
 }
 
+document.getElementById("dark").addEventListener("click",dark);
+function dark(){
+    document.body.style="background-image: linear-gradient(to top, #181717 0%, black 100%);"
+    let main=document.getElementsByClassName("main");
 
+    for(var i=0;i<main.length;i++){
+        main[i].style.color="aliceblue"
+    }
+    
+    let flex=document.getElementsByClassName("flex-child");
+    
+    for(var i=0;i<flex.length;i++){
+        flex[i].style.border="2px solid aliceblue";
+    }
+}
+
+document.getElementById("light").addEventListener("click",light);
+function light(){
+    document.body.style="background-color: #d0ac8c;"
+    let main=document.getElementsByClassName("main");
+
+    for(var i=0;i<main.length;i++){
+        main[i].style.color="black"
+    }
+    
+    let flex=document.getElementsByClassName("flex-child");
+    
+    for(var i=0;i<flex.length;i++){
+        flex[i].style.border="2px solid black";
+    }
+}
