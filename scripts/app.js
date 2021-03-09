@@ -8,10 +8,22 @@ function newGame(){
 }
 
 function changeLyrics(){
+    var score=document.getElementById("score").innerHTML;
+    var attempt=document.getElementById("attempt").innerHTML;
+    if(attempt==0){
+    document.getElementById("accuracy").innerHTML="Your accuracy is = 0.00%";
+
+    }
+    else{
+        document.getElementById("accuracy").innerHTML="Your accuracy is = " +  ((score/attempt)*100).toFixed(2) + "%";
+    }
     var select=document.getElementById("artists").value;
 
     if(select=="Choose"){
-       document.getElementById("alert").innerHTML="Choose your artist!" 
+       document.getElementById("alert").innerHTML="Choose your artist!"
+       document.getElementById("score").innerHTML=0;
+       document.getElementById("attempt").innerHTML=0;
+       document.getElementById("accuracy").innerHTML="";
     }
     else if(select=="All Artists"){
         x=0;y=95;
@@ -70,18 +82,21 @@ function changeLyrics(){
 ground=true
 function scoreReal(){
     var a=Number(document.getElementById("score").innerHTML);
-
+    var b=Number(document.getElementById("attempt").innerHTML);
+    document.getElementById("attempt").innerHTML=b+1;
+    document.getElementById('alert').innerHTML=""
     if(ground){
+        document.getElementById("alert").innerHTML="Thats right!"
                 
         document.getElementById("score").innerHTML=a+1;
     }
     else{
+        document.getElementById("alert").innerHTML="Oh no :("
         if(a==0){
 
             changeLyrics();
             return;
         }
-        document.getElementById("score").innerHTML=a-1;
     }
 
     changeLyrics();
@@ -89,19 +104,24 @@ function scoreReal(){
 
 function scoreFake(){
     
+    var b=Number(document.getElementById("attempt").innerHTML);
+    document.getElementById("attempt").innerHTML=b+1;
+    document.getElementById("alert").innerHTML=""
     var a=Number(document.getElementById("score").innerHTML);
 
     if(!ground){
+        document.getElementById("alert").innerHTML="You got this!"
                 
         document.getElementById("score").innerHTML=a+1;
     }
     else{
+        document.getElementById("alert").innerHTML="Oops!"
         if(a==0){
             changeLyrics();
             return;
         }
-        document.getElementById("score").innerHTML=a-1;
     }
+
     changeLyrics();
 }
 
