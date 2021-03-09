@@ -108,7 +108,9 @@ function scoreFake(){
 document.getElementById("dark").addEventListener("click",dark);
 function dark(){
     document.body.style="background-image: linear-gradient(to top, #181717 0%, black 100%);"
+    document.getElementById("text").style="font-size: 20;";
     let main=document.getElementsByClassName("main");
+
 
     for(var i=0;i<main.length;i++){
         main[i].style.color="aliceblue"
@@ -124,6 +126,7 @@ function dark(){
 document.getElementById("light").addEventListener("click",light);
 function light(){
     document.body.style="background-color: #d0ac8c;"
+    document.getElementById("text").style="font-size: 20;font-weight: bold;";
     let main=document.getElementsByClassName("main");
 
     for(var i=0;i<main.length;i++){

@@ -120,7 +120,11 @@ div.flex-child:nth-of-type(3){
   background-color: aliceblue; 
   color: rgb(0, 0, 0);
 }
-
+.social{
+  position:absolute;
+  bottom: 50px;
+  width: 100%;
+}
 #lyrics{
   white-space: pre-line;
   font-size: 20;
