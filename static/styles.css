@@ -146,5 +146,49 @@ div.flex-child:nth-of-type(3){
   }
 
 
+.toggle {
+  float: right;
+  height: 30px;
+  width: 60px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow:
+  
+    16px 16px 16px 16px #fff inset,
+    -4px -4px 4px 0px #ffffff inset;
+}
 
+.toggle-state {
+  display: none;
+}
+
+.indicator {
+  height: 100%;
+  width: 200%;
+  background: #fff;
+  border-radius: 15px;
+  transform: translate3d(-75%, 0, 0);
+  transition: transform 3s /*cubic-bezier(0.85, 0.05, 0.18, 1.35)*/;
+  transition: background 2s;
+  box-shadow:
+    -8px -4px 8px 0px #fff,
+    36px 0px  #111;
+}
+
+.toggle-state:checked ~ .indicator {
+  transform: translate3d(25%, 0, 0);
+  background: #111;
+ 
+  
+}
+.label {
+  display: inline-flex;
+  float: right; 
+  cursor: pointer;
+}
+
+.label-text {
+    padding: 5px 15px; 
+    font-family: 'Lato', sans-serif;
+}
  
