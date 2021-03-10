@@ -11,11 +11,11 @@ function changeLyrics(){
     var score=document.getElementById("score").innerHTML;
     var attempt=document.getElementById("attempt").innerHTML;
     if(attempt==0){
-    document.getElementById("accuracy").innerHTML="Your accuracy is = 0.00%";
+    document.getElementById("accuracy").innerHTML="Your accuracy is 0.00%";
 
     }
     else{
-        document.getElementById("accuracy").innerHTML="Your accuracy is = " +  ((score/attempt)*100).toFixed(2) + "%";
+        document.getElementById("accuracy").innerHTML="Your accuracy is " +  ((score/attempt)*100).toFixed(2) + "%";
     }
     var select=document.getElementById("artists").value;
 
