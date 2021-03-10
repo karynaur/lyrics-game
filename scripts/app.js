@@ -124,20 +124,17 @@ function scoreFake(){
 
     changeLyrics();
 }
+function mode(){  
 
-$('.toggle-state').change(function() {
-  
-            if($('.toggle-state:checked').val()!="check"){
-                light();
-            }
-            else{
-                dark();
-            }
-  
+        if (document.getElementById('check').checked) 
+        {
+            dark();
+        } else {
+            light();
+        }
+           
 
-        });
-
-
+}
 
 function dark(){
     document.body.style="background-image: linear-gradient(to top, #181717 0%, black 100%);"
@@ -154,6 +151,7 @@ function dark(){
     for(var i=0;i<flex.length;i++){
         flex[i].style.border="2px solid aliceblue";
     }
+    document.getElementsByClassName("flex-child-border")[0].style.borderBottom="2px solid aliceblue";
 }
 
 
@@ -171,4 +169,5 @@ function light(){
     for(var i=0;i<flex.length;i++){
         flex[i].style.border="2px solid black";
     }
+    document.getElementsByClassName("flex-child-border")[0].style.borderBottom="2px solid black";
 }
