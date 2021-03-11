@@ -9,5 +9,6 @@ git clone https://github.com/karynaur/lyrics-game
 cd lyrics-game
 streamlit run run.py
 ```
+or open the home.html
 
 
